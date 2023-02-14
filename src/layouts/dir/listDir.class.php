@@ -1,7 +1,10 @@
 <?php
     namespace sysborg\autentiquev2;
 
-    class listDir extends common implements \sysborg\autentiquev2\layouts{
+    use sysborg\autentiquev2\layouts;
+
+    class listDir extends common implements \sysborg\autentiquev2\layouts
+    {
         /**
          * @description-en-US:       Stores informations and variables for this layout
          * @description-pt-BR:       Armazena informações e variáveis para esse layout
@@ -25,15 +28,16 @@
         /**
          * @description-en-US       Parse the values on the graphql schema and returns as string
          * @description-pt-BR       Parse os valores no schema do graphql e retorna como string
+         * @param
+         * @return                  string
          * @author                  Anderson Arruda < andmarruda@gmail.com >
          * @version                 1.0.0
          * @access                  public
-         * @param                   
-         * @return                  string
          */
-        public function parse() : string
+        public function parse(): string
         {
             return sprintf($this->query, $this->limit, $this->page);
         }
     }
+
 ?>
